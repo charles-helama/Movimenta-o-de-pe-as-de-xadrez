@@ -1,45 +1,53 @@
-# Movimenta-o-de-pe-as-de-xadrez
-Criando um código seguindo as especificações dadas pelo professor.
 #include <stdio.h>
 
-int main(){
+		//movimentação do bispo
+
+void moverbispo(int casas) {
+    if (casas > 0) {
+        printf("Movendo o bispo 1 casa para a diagonal direita para cima\n");
+        moverbispo(casas - 1);
+        printf("\n");
+    }
+}
 	
-	int i=0;
-	int movimentocompleto = 1; //para contolrar movimento em L
-	
-	while(i < 4){
-		printf("Torre pra cima %d\n", i); // movimento da torre
-		i++;
+			// movimento da torre
+void movertorre(int casas){
+	if(casas > 0){
+		printf("Movendo a torre 1 casa para a direita\n");
+		movertorre(casas - 1);
 		printf("\n");
 	}
-	
-	
-	do {
-		printf("Rainha para lado direito %d\n",i); //movimento da rainha
-		i++;
-		
-	} while(i <=7 );
-	
-	printf("\n");
-	
-	
-	for (i=0;i<5; i++){
-		printf("Bispo pra cima lado esquerdo %d\n", i);//movimento do bispo
+}
+		//movimento da rainha
+void moverrainha(int casas){
+	if(casas > 0){
+		printf("Mover rainha 1 casa pra esquerda\n");
+		moverrainha(casas - 1);
+		printf("\n");
 	}
-	rintf("\n); //logo abaixo movimento do cavalo.
-	while(movimentocompleto--);{
-		
-	for(i=0; i<2; i++){
-		
-		printf("cima\n"); //movimenta duas vezes(duas casas)
-	}	
-		printf("Direita\n");//movimento para a direita
+}
+		//movimento do cavalo
+void movercavalo(int movimentos){
+	if(movimentos > 0){
+		printf("Movendo o cavalo duas casas para cima e uma para direita\n");
+		movercavalo(movimentos - 1);
 	}
-	
-		
-		
-		
+}
+
+
+
+int main() {
+    moverbispo(5);
+    movertorre(5);
+    moverrainha(8);
+    movercavalo(3);
+    
+    
+    
+    
+	return 0;
 	
 	
 	
 }
+
