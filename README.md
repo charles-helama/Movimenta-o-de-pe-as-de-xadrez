@@ -26,7 +26,7 @@ int main(){
 	for (i=0;i<5; i++){
 		printf("Bispo pra cima lado esquerdo %d\n", i);//movimento do bispo
 	}
-	
+	rintf("\n); //logo abaixo movimento do cavalo.
 	while(movimentocompleto--);{
 		
 	for(i=0; i<2; i++){
